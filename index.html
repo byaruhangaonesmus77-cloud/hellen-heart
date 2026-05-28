@@ -23,12 +23,11 @@
       font-family: cursive;
       font-size: 22px;
       fill: red;
-      text-shadow: 2px 2px 8px pink;
+      filter: drop-shadow(0 0 6px pink);
     }
 
-    /* Animate text along the path */
     textPath {
-      animation: moveText 10s linear infinite;
+      animation: moveText 12s linear infinite;
     }
 
     @keyframes moveText {
@@ -36,15 +35,26 @@
       to   { startOffset: 100%; }
     }
 
+    /* Glitter effect */
+    @keyframes glitter {
+      0% { fill: red; filter: drop-shadow(0 0 6px pink); }
+      50% { fill: hotpink; filter: drop-shadow(0 0 12px white); }
+      100% { fill: red; filter: drop-shadow(0 0 6px pink); }
+    }
+
+    text {
+      animation: glitter 2s infinite alternate;
+    }
+
     .name {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 30px;
+      font-size: 32px;
       font-family: cursive;
       color: white;
-      text-shadow: 2px 2px 10px red;
+      text-shadow: 2px 2px 12px red;
       animation: fadeIn 4s ease-in-out forwards;
       animation-delay: 2s;
     }
@@ -65,7 +75,16 @@
         C550,150 500,250 350,400
         Z" fill="none" stroke="transparent"/>
 
-      <!-- Flowing text -->
+      <!-- Flowing text around heart -->
       <text>
         <textPath href="#heartPath" startOffset="0%">
-          💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖
+          💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖
+        </textPath>
+      </text>
+    </svg>
+
+    <!-- Name inside heart -->
+    <div class="name">MAMITO HELLEN</div>
+  </div>
+</body>
+</html>
