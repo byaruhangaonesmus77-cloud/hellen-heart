@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>I LOVE YOU Heart Motion</title>
+  <title>I LOVE YOU Heart Flow</title>
   <style>
     body {
       background: black;
@@ -14,28 +14,26 @@
       overflow: hidden;
     }
 
-    .heart-path {
-      position: relative;
-      width: 400px;
-      height: 360px;
+    svg {
+      width: 500px;
+      height: 450px;
     }
 
-    .love {
-      position: absolute;
+    text {
       font-family: cursive;
       font-size: 22px;
-      color: red;
-      text-shadow: 2px 2px 10px pink;
-      animation: moveAlong 10s linear infinite;
+      fill: red;
+      text-shadow: 2px 2px 8px pink;
     }
 
-    /* Heart path defined with offsets */
-    @keyframes moveAlong {
-      0%   { top: 180px; left: 200px; transform: translate(-50%, -50%) rotate(0deg); }
-      25%  { top: 40px; left: 100px; transform: translate(-50%, -50%) rotate(-45deg); }
-      50%  { top: 40px; left: 300px; transform: translate(-50%, -50%) rotate(45deg); }
-      75%  { top: 320px; left: 200px; transform: translate(-50%, -50%) rotate(180deg); }
-      100% { top: 180px; left: 200px; transform: translate(-50%, -50%) rotate(360deg); }
+    /* Animate text along the path */
+    textPath {
+      animation: moveText 10s linear infinite;
+    }
+
+    @keyframes moveText {
+      from { startOffset: 0%; }
+      to   { startOffset: 100%; }
     }
 
     .name {
@@ -43,7 +41,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 28px;
+      font-size: 30px;
       font-family: cursive;
       color: white;
       text-shadow: 2px 2px 10px red;
@@ -58,13 +56,16 @@
   </style>
 </head>
 <body>
-  <div class="heart-path">
-    <!-- Multiple “I LOVE YOU” texts staggered -->
-    <div class="love" style="animation-delay:0s;">I LOVE YOU</div>
-    <div class="love" style="animation-delay:2.5s;">I LOVE YOU</div>
-    <div class="love" style="animation-delay:5s;">I LOVE YOU</div>
-    <div class="love" style="animation-delay:7.5s;">I LOVE YOU</div>
-    <div class="name">MAMITO HELLEN</div>
-  </div>
-</body>
-</html>
+  <div style="position:relative;">
+    <svg viewBox="0 0 500 450">
+      <!-- Heart path -->
+      <path id="heartPath" d="M250,400
+        C100,250 50,150 150,80
+        C250,10 350,10 450,80
+        C550,150 500,250 350,400
+        Z" fill="none" stroke="transparent"/>
+
+      <!-- Flowing text -->
+      <text>
+        <textPath href="#heartPath" startOffset="0%">
+          💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖
