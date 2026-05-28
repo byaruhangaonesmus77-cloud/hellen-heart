@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>I Love You Heart for MAMITO HELLEN</title>
+  <title>MAMITO HELLEN Heart Animation</title>
   <style>
     body {
-      background: black;
+      background-color: black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -14,59 +14,51 @@
       overflow: hidden;
     }
 
-    .container {
+    .heart-container {
       position: relative;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .heart-image {
       width: 400px;
-      height: 400px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 30px red;
+      animation: fadeIn 4s ease-in-out forwards;
     }
 
-    .love {
-      position: absolute;
-      font-size: 28px;
-      font-family: cursive;
-      color: red;
-      opacity: 0;
-      animation: floatIn 4s forwards;
-    }
-
-    /* Position "I LOVE YOU" around heart shape */
-    .love.top-left { top: 40px; left: 40px; animation-delay: 0s; }
-    .love.top-right { top: 40px; right: 40px; animation-delay: 1s; }
-    .love.bottom-left { bottom: 40px; left: 40px; animation-delay: 2s; }
-    .love.bottom-right { bottom: 40px; right: 40px; animation-delay: 3s; }
-
-    .name {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 30px;
-      font-family: cursive;
-      color: white;
-      text-shadow: 2px 2px 6px red;
-      opacity: 0;
-      animation: fadeIn 6s forwards;
-      animation-delay: 4s;
-    }
-
-    @keyframes floatIn {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .caption {
+      position: absolute;
+      bottom: -60px;
+      width: 100%;
+      text-align: center;
+      font-family: cursive;
+      font-size: 28px;
+      color: white;
+      text-shadow: 2px 2px 10px red;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 2px 2px 10px red; }
+      to { text-shadow: 2px 2px 20px pink; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="love top-left">I LOVE YOU</div>
-    <div class="love top-right">I LOVE YOU</div>
-    <div class="love bottom-left">I LOVE YOU</div>
-    <div class="love bottom-right">I LOVE YOU</div>
-    <div class="name">MAMITO HELLEN</div>
+  <div class="heart-container">
+    <img src="https://copilot.microsoft.com/th/id/BCO.87409bb6-55e6-47fe-8677-57223d58692a.png" alt="Heart of Love" class="heart-image">
+    <div class="caption">Forever Yours, MAMITO HELLEN 💖</div>
   </div>
 </body>
 </html>
