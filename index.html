@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>I LOVE YOU Heart Flow</title>
+  <title>Glittering I LOVE YOU Heart</title>
   <style>
     body {
       background: black;
@@ -15,8 +15,8 @@
     }
 
     svg {
-      width: 500px;
-      height: 450px;
+      width: 600px;
+      height: 500px;
     }
 
     text {
@@ -27,7 +27,7 @@
     }
 
     textPath {
-      animation: moveText 12s linear infinite;
+      animation: moveText 15s linear infinite;
     }
 
     @keyframes moveText {
@@ -51,7 +51,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 32px;
+      font-size: 34px;
       font-family: cursive;
       color: white;
       text-shadow: 2px 2px 12px red;
@@ -67,18 +67,18 @@
 </head>
 <body>
   <div style="position:relative;">
-    <svg viewBox="0 0 500 450">
+    <svg viewBox="0 0 600 500">
       <!-- Heart path -->
-      <path id="heartPath" d="M250,400
-        C100,250 50,150 150,80
-        C250,10 350,10 450,80
-        C550,150 500,250 350,400
+      <path id="heartPath" d="M300,450
+        C150,300 80,180 180,100
+        C300,20 400,20 520,100
+        C620,180 550,300 400,450
         Z" fill="none" stroke="transparent"/>
 
-      <!-- Flowing text around heart -->
+      <!-- Flowing glittering text -->
       <text>
         <textPath href="#heartPath" startOffset="0%">
-          💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖
+          💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖
         </textPath>
       </text>
     </svg>
