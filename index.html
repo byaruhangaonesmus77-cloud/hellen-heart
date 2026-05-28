@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Glittering I LOVE YOU Heart</title>
+  <title>Romantic Heart for MAMITO HELLEN</title>
   <style>
     body {
       background: black;
@@ -11,39 +11,37 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      overflow: hidden;
     }
 
-    svg {
-      width: 600px;
-      height: 500px;
+    .container {
+      position: relative;
+      width: 400px;
+      height: 400px;
     }
 
-    text {
+    .love {
+      position: absolute;
       font-family: cursive;
       font-size: 22px;
-      fill: red;
-      filter: drop-shadow(0 0 6px pink);
+      color: red;
+      text-shadow: 0 0 10px pink;
+      animation: float 6s infinite alternate;
     }
 
-    /* Animate text along the path */
-    textPath {
-      animation: moveText 15s linear infinite;
-    }
+    /* Place words roughly around a heart */
+    .love:nth-child(1) { top: 20px; left: 160px; animation-delay: 0s; }
+    .love:nth-child(2) { top: 60px; left: 80px; animation-delay: 1s; }
+    .love:nth-child(3) { top: 60px; left: 240px; animation-delay: 2s; }
+    .love:nth-child(4) { top: 120px; left: 40px; animation-delay: 3s; }
+    .love:nth-child(5) { top: 120px; left: 280px; animation-delay: 4s; }
+    .love:nth-child(6) { top: 200px; left: 60px; animation-delay: 5s; }
+    .love:nth-child(7) { top: 200px; left: 260px; animation-delay: 6s; }
+    .love:nth-child(8) { top: 280px; left: 140px; animation-delay: 7s; }
 
-    @keyframes moveText {
-      from { startOffset: 0%; }
-      to   { startOffset: 100%; }
-    }
-
-    /* Glitter effect */
-    @keyframes glitter {
-      0% { fill: red; filter: drop-shadow(0 0 6px pink); }
-      50% { fill: hotpink; filter: drop-shadow(0 0 12px white); }
-      100% { fill: red; filter: drop-shadow(0 0 6px pink); }
-    }
-
-    text {
-      animation: glitter 2s infinite alternate;
+    @keyframes float {
+      from { transform: scale(1) rotate(0deg); opacity: 0.7; }
+      to { transform: scale(1.2) rotate(10deg); opacity: 1; }
     }
 
     .name {
@@ -51,39 +49,29 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 34px;
+      font-size: 28px;
       font-family: cursive;
       color: white;
-      text-shadow: 2px 2px 12px red;
-      animation: fadeIn 4s ease-in-out forwards;
-      animation-delay: 2s;
+      text-shadow: 0 0 15px red;
+      animation: glow 2s infinite alternate;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px red; }
+      to { text-shadow: 0 0 20px pink; }
     }
   </style>
 </head>
 <body>
-  <div style="position:relative;">
-    <svg viewBox="0 0 600 500">
-      <!-- Heart path -->
-      <path id="heartPath" d="M300,450
-        C150,300 80,180 180,100
-        C300,20 400,20 520,100
-        C620,180 550,300 400,450
-        Z" fill="none" stroke="transparent"/>
-
-      <!-- Flowing glittering text -->
-      <text>
-        <textPath href="#heartPath" startOffset="0%">
-          💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖 I LOVE YOU 💖
-        </textPath>
-      </text>
-    </svg>
-
-    <!-- Name inside heart -->
+  <div class="container">
+    <div class="love">I LOVE YOU</div>
+    <div class="love">I LOVE YOU</div>
+    <div class="love">I LOVE YOU</div>
+    <div class="love">I LOVE YOU</div>
+    <div class="love">I LOVE YOU</div>
+    <div class="love">I LOVE YOU</div>
+    <div class="love">I LOVE YOU</div>
+    <div class="love">I LOVE YOU</div>
     <div class="name">MAMITO HELLEN</div>
   </div>
 </body>
